@@ -13,48 +13,19 @@ const Modal= {
 
 
 const transactions = [
-    {id:1, description:'luz',amount:-50000,date:'23/01/2021',},
-    {id:2, description:'Criação de Website',amount:500000,date:'23/01/2021',},
-    {id:3, description:'internet',amount:-20000,date:'23/01/2021',},
+    {id:1, description:'luz',amount: -50000,date:'23/01/2021',},
+    {id:2, description:'Criação de Website',amount: 500000,date:'23/01/2021',},
+    {id:3, description:'internet',amount: -20000,date:'23/01/2021',},
 ]
 const transaction = {
-        all:transactions,
-        add(transactions){
-            transaction.all.push(transactions)
-        },
-
-
     incomes(){
-
-        let income =0;
-        transaction.all.forEach(transactions => {
-            if(transactions.amount > 0){
-                income = income + transactions.amount;
-            }
-        })
-
             //somar as entradas
-            return income;
     },
-
     expenses(){
-
-
-        let expens = 0;
-        transactions.all.forEach(transactions =>{
-            if(transactions.amount < 0){
-                expens= expens + transactions.amount;
-            }
-        })
          //somar as saidas
-         return expens;
     },
-
     total(){
-
-  
         //entradas -saidas
-        return transaction.incomes() + transaction.expenses();
     }
 
 }
@@ -92,17 +63,8 @@ const DOM={
 },
 
 
-    updateBalance(){ 
-        document.getElementById('incomeDislpay').innerHTML= Utils.formatCurrency(transaction.incomes())
-
-        document.getElementById('expenseDisplay').innerHTML=  Utils.formatCurrency(transaction.expenses())
-        document.getElementById('totalDisplay').innerHTML=  Utils.formatCurrency(transaction.total())
-        
-
-
-
-
-
+    updateBalance(){
+        document.getElementById('incomeDislpay').innerHTML= "Discover"
     }
 }
 
@@ -110,7 +72,7 @@ const Utils ={
     formatCurrency(value){
         const signal = Number(value) < 0 ? "-" : ""
 
-    alue = String(value).replace(/\D/g,"")
+    alue = String(value).replace(/\d/g,"")
     value= Number(value) / 100
     value=      value.toLocaleString("pt-BR",{
         style: "currency",
@@ -129,6 +91,7 @@ transactions.forEach(function(transaction){
 
 })
 
+<<<<<<< HEAD
 DOM.updateBalance()
 
 
@@ -140,3 +103,6 @@ transaction.add({
 
 >>>>>>> Stashed changes
 })
+=======
+DOM.updateBalance()
+>>>>>>> parent of 52d4348 (js)
