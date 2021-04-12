@@ -133,5 +133,10 @@ DOM.updateBalance()
 
 
 transaction.add({
+<<<<<<< Updated upstream
     id: 39,descriptio:'Alo', amount: 200, date: '23/01/21'
+=======
+    id:4, description:'internet',amount: -20000,date:'23/01/2021',
+
+>>>>>>> Stashed changes
 })
